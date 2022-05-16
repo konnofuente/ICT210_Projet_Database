@@ -13,6 +13,8 @@ import java.util.ResourceBundle;
 public class MenuController implements Initializable {
     @FXML
     private Button schedule_btn;
+    @FXML
+    private Button period_btn;
 
     @FXML private Button teacher_btn;
 
@@ -52,6 +54,17 @@ public class MenuController implements Initializable {
             public void handle(ActionEvent actionEvent) {
                 try {
                     DBUtils.changeover(actionEvent,"courseManagement.fxml","COURSE",900);
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+        });
+
+        period_btn.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent actionEvent) {
+                try {
+                    DBUtils.changeover(actionEvent,"periodManagement.fxml","PERIOS MANAGEMENT",900);
                 } catch (IOException e) {
                     e.printStackTrace();
                 }

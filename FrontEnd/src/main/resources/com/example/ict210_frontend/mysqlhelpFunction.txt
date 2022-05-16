@@ -1,0 +1,6 @@
+Function to get last id of a
+ select Colume
+      from cours
+      order by id_table desc
+      limit 1
+

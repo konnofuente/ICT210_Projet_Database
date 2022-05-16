@@ -38,7 +38,7 @@
                   <PasswordField fx:id="password_txt" layoutX="137.0" layoutY="241.0" prefHeight="26.0" prefWidth="162.0" />
                   <TextField fx:id="name_txt" layoutX="133.0" layoutY="195.0" prefHeight="26.0" prefWidth="170.0" />
                   <JFXButton fx:id="signup_btn" layoutX="110.0" layoutY="351.0" prefHeight="34.0" prefWidth="115.0" style="-fx-background-color: transparent;" text="Sign Up" textFill="#7e4ccb" />
-                  <Button fx:id="login_btn" layoutX="110.0" layoutY="314.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="117.0" style="-fx-background-color: #7E4CCB;" text="Button" />
+                  <Button fx:id="login_btn" layoutX="110.0" layoutY="314.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="117.0" style="-fx-background-color: #7E4CCB;" text="Log In" />
                </children>
             </AnchorPane>
          </center>

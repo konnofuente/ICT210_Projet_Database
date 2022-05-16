@@ -1,0 +1,8 @@
+
+.anchor {
+    -fx-border-color:blue red red red; 
+    -fx-background-color:lightgray; "
+    -fx-border-width: 6 2 2 2; "
+    -fx-border-style: dashed solid solid solid;
+
+}

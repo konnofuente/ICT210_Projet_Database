@@ -9,19 +9,21 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.ict210_frontend.ClassManagementController">
+<AnchorPane prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.ict210_frontend.PeriodManagementController">
    <children>
       <AnchorPane prefHeight="600.0" prefWidth="800.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
             <TableView fx:id="clientTable" layoutX="-2.0" layoutY="202.0" prefHeight="359.0" prefWidth="592.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
                <columns>
-                  <TableColumn fx:id="idCol" prefWidth="380.79998779296875" text="ID CLASS" />
-                  <TableColumn fx:id="nameCol" prefWidth="400.0" text="NAME CLASS" />
+                  <TableColumn fx:id="idCol" prefWidth="192.79998171329498" text="IDCOURS" />
+                  <TableColumn fx:id="nameCol" prefWidth="275.2000427246094" text="IDSEANCE" />
+                  <TableColumn prefWidth="137.60006713867188" text="IDUE" />
+                  <TableColumn prefWidth="158.4000244140625" text="ID_SALLE" />
+                  <TableColumn prefWidth="128.8001708984375" text="JOUR" />
                </columns>
             </TableView>
             <Pane layoutX="4.0" layoutY="97.0" prefHeight="4.0" prefWidth="592.0" style="-fx-background-color: #543287;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
-            <Label layoutX="14.0" layoutY="29.0" text="CLASS MANAGEMENT" textFill="#7e4ccb">
+            <Label layoutX="14.0" layoutY="29.0" text="PERIOD MANAGEMENT" textFill="#7e4ccb">
                <font>
                   <Font size="24.0" />
                </font>
@@ -32,7 +34,7 @@
                </font>
             </Label>
             <TextField fx:id="tfsearch" layoutX="100.0" layoutY="118.0" prefHeight="29.0" prefWidth="323.0" />
-            <Label layoutX="306.0" layoutY="64.0" text="CLASS INFORMATION">
+            <Label layoutX="306.0" layoutY="64.0" text="CLASSES INFORMATION">
                <font>
                   <Font name="Consolas" size="18.0" />
                </font>
