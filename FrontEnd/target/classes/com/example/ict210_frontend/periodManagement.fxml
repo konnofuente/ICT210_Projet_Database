@@ -15,7 +15,7 @@
          <children>
             <TableView fx:id="clientTable" layoutX="-2.0" layoutY="202.0" prefHeight="359.0" prefWidth="592.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
                <columns>
-                  <TableColumn fx:id="idCol" prefWidth="192.79998171329498" text="IDCOURS" />
+                  <TableColumn prefWidth="192.79998171329498" text="IDCOURS" />
                   <TableColumn fx:id="nameCol" prefWidth="275.2000427246094" text="IDSEANCE" />
                   <TableColumn prefWidth="137.60006713867188" text="IDUE" />
                   <TableColumn prefWidth="158.4000244140625" text="ID_SALLE" />

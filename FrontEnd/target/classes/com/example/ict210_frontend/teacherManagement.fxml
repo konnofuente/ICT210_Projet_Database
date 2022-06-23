@@ -10,12 +10,11 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-
 <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.ict210_frontend.TeacherManagementController">
    <children>
       <AnchorPane prefHeight="600.0" prefWidth="800.0">
          <children>
-            <TableView fx:id="clientTable" layoutX="-2.0" layoutY="202.0" prefHeight="359.0" prefWidth="592.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+            <TableView fx:id="TeacherTable" layoutX="-14.0" layoutY="219.0" prefHeight="359.0" prefWidth="592.0" AnchorPane.bottomAnchor="21.799999999999955" AnchorPane.leftAnchor="-14.0" AnchorPane.rightAnchor="14.0">
                <columns>
                   <TableColumn fx:id="idCol" prefWidth="230.4000244140625" text="ID TEACHER" />
                   <TableColumn fx:id="nameCol" prefWidth="332.0" text="NAME /SURNAME" />

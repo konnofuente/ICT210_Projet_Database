@@ -10,6 +10,7 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.sql.*;
+import java.time.LocalDate;
 
 public class DBUtils {
 
@@ -187,6 +188,59 @@ public class DBUtils {
             alert.show();
 
 
+        }
+    }
+
+
+
+    public static void AddPeroid(ActionEvent event, Integer id_course, Integer id_seance , Integer id_ue , Integer id_salle , LocalDate jour) throws SQLException {
+        Connection connection=null;
+        PreparedStatement checkUserExist=null;
+        PreparedStatement checkUserExist2=null;
+        ResultSet resultSet=null;
+        ResultSet resultSet2=null;
+        PreparedStatement psInsert=null;
+        String query;
+
+        connection=DriverManager.getConnection("jdbc:mysql://localhost:3306/projetresaux", "root" , "1234");
+        checkUserExist=connection.prepareStatement("select * from cours where IDCOURS = ?");
+        checkUserExist.setInt(1,id_course);
+        resultSet=checkUserExist.executeQuery();
+
+        checkUserExist2=connection.prepareStatement("select * from cours where IDSEANCE = ? AND IDUE = ? AND JOUR= ?");
+        checkUserExist2.setInt(1,id_seance);
+        checkUserExist2.setInt(2,id_ue);
+        checkUserExist2.setDate(3, Date.valueOf(jour));
+        resultSet2=checkUserExist2.executeQuery();
+
+        if(resultSet.isBeforeFirst()){
+            System.out.println("Peroid already Exist");
+            Alert alert=new Alert(Alert.AlertType.ERROR);
+            alert.setContentText("You cannot add this Peroid with this ID \n A Peroid  already Exist with Same ID!!!!!!!!!");
+            alert.show();
+        }
+
+        else if(resultSet2.isBeforeFirst()){
+                System.out.println("Peroid already Exist With Same id sceance,ue,jour");
+                Alert alert=new Alert(Alert.AlertType.ERROR);
+                alert.setContentText("You cannot add this Peroid with this sceance , ue and date \n A Peroid  already Exist with Same ID!!!!!!!!!");
+                alert.show();
+        }
+
+        else{
+            query="insert into cours (IDCOURS,IDSEANCE,IDUE,ID_SALLE,JOUR)" + "values(?,?,?,?,?)";
+          psInsert=connection.prepareStatement(query);
+            psInsert.setInt(1,id_course);
+            psInsert.setInt(2,id_seance);
+            psInsert.setInt(3,id_ue);
+            psInsert.setInt(4,id_salle);
+            psInsert.setDate(5, Date.valueOf(jour));
+            psInsert.executeUpdate();
+            connection.close();
+
+            Alert alert=new Alert(Alert.AlertType.CONFIRMATION);
+            alert.setContentText(" Was successfully Register as Peroid !!!!!!!!!");
+            alert.show();
         }
     }
 }
