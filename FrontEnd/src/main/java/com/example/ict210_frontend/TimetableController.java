@@ -1,13 +1,22 @@
 package com.example.ict210_frontend;
 
+import com.jfoenix.controls.JFXButton;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
 public class TimetableController implements Initializable {
+
+    @FXML
+    private Button return_btn;
+
     @FXML
     private Label mon1;
     @FXML
@@ -70,5 +79,15 @@ public class TimetableController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
+        return_btn.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent actionEvent) {
+                try {
+                    DBUtils.changeover(actionEvent,"menu.fxml","MENU",900);
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+        });
     }
 }

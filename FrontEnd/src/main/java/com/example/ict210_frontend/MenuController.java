@@ -26,6 +26,18 @@ public class MenuController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
+
+        schedule_btn.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent actionEvent) {
+                try {
+                    DBUtils.changeover(actionEvent,"Timetable.fxml","TimeTable",900);
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+        });
+
         teacher_btn.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent actionEvent) {

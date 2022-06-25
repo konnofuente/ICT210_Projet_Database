@@ -13,13 +13,13 @@
    <children>
       <AnchorPane prefHeight="600.0" prefWidth="800.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
-            <TableView fx:id="clientTable" layoutX="-2.0" layoutY="202.0" prefHeight="359.0" prefWidth="592.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+            <TableView fx:id="PeriodTable" layoutX="-2.0" layoutY="202.0" prefHeight="359.0" prefWidth="592.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
                <columns>
-                  <TableColumn prefWidth="192.79998171329498" text="IDCOURS" />
-                  <TableColumn fx:id="nameCol" prefWidth="275.2000427246094" text="IDSEANCE" />
-                  <TableColumn prefWidth="137.60006713867188" text="IDUE" />
-                  <TableColumn prefWidth="158.4000244140625" text="ID_SALLE" />
-                  <TableColumn prefWidth="128.8001708984375" text="JOUR" />
+                  <TableColumn fx:id="idPeriod" prefWidth="192.79998171329498" text="IDPERIOD" />
+                  <TableColumn fx:id="idSeance" prefWidth="275.2000427246094" text="IDSEANCE" />
+                  <TableColumn fx:id="idUe" prefWidth="137.60006713867188" text="IDUE" />
+                  <TableColumn fx:id="idSalle" prefWidth="158.4000244140625" text="ID_SALLE" />
+                  <TableColumn fx:id="jour" prefWidth="128.8001708984375" text="JOUR" />
                </columns>
             </TableView>
             <Pane layoutX="4.0" layoutY="97.0" prefHeight="4.0" prefWidth="592.0" style="-fx-background-color: #543287;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />

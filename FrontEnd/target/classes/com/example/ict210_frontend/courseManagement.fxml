@@ -10,12 +10,11 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-
-<HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.ict210_frontend.CourseManagementController">
+<HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.ict210_frontend.UEManagementController">
    <children>
       <AnchorPane prefHeight="600.0" prefWidth="800.0">
          <children>
-            <TableView fx:id="clientTable" layoutX="-2.0" layoutY="202.0" prefHeight="359.0" prefWidth="592.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+            <TableView fx:id="CourseTable" layoutX="-2.0" layoutY="202.0" prefHeight="359.0" prefWidth="592.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
                <columns>
                   <TableColumn fx:id="idCol" prefWidth="380.79998779296875" text="ID COURSE" />
                   <TableColumn fx:id="nameCol" prefWidth="400.0" text="NAME COUSRE" />
