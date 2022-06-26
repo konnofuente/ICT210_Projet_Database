@@ -65,6 +65,13 @@ public class TeacherManagementController implements Initializable {
             }
         });
 
+        refresh_btn.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent actionEvent) {
+                refreshTable();
+            }
+        });
+
         add_btn.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent actionEvent) {

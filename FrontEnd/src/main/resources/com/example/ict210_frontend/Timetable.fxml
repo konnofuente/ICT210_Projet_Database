@@ -261,12 +261,17 @@
          <right>
             <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: white;" BorderPane.alignment="CENTER">
                <children>
-                  <Button layoutX="25.0" layoutY="30.0" mnemonicParsing="false" prefHeight="106.0" prefWidth="149.0" style="-fx-background-color: #8064A2;" text="Add Period" textFill="WHITE">
+                  <Button fx:id="add_period" layoutX="25.0" layoutY="30.0" mnemonicParsing="false" prefHeight="106.0" prefWidth="149.0" style="-fx-background-color: #8064A2;" text="Add Period" textFill="WHITE">
                      <font>
                         <Font name="System Bold" size="18.0" />
                      </font>
                   </Button>
                   <Button fx:id="return_btn" layoutX="27.0" layoutY="381.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="146.0" style="-fx-background-color: #8064A2;" text="Return" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="refresh_btn" layoutX="27.0" layoutY="289.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="146.0" style="-fx-background-color: #8064A2;" text="Refresh" textFill="WHITE">
                      <font>
                         <Font name="System Bold" size="18.0" />
                      </font>

@@ -197,35 +197,69 @@ public class DBUtils {
         Connection connection=null;
         PreparedStatement checkUserExist=null;
         PreparedStatement checkUserExist2=null;
+        PreparedStatement checkUserExist3=null;
+        PreparedStatement checkUserExist4=null;
         ResultSet resultSet=null;
         ResultSet resultSet2=null;
+        ResultSet resultSet3=null;
+        ResultSet resultSet4=null;
         PreparedStatement psInsert=null;
         String query;
 
+        //Verification du idcours
         connection=DriverManager.getConnection("jdbc:mysql://localhost:3306/projetresaux", "root" , "1234");
         checkUserExist=connection.prepareStatement("select * from cours where IDCOURS = ?");
         checkUserExist.setInt(1,id_course);
         resultSet=checkUserExist.executeQuery();
-
+        // verification Redondance de UE
         checkUserExist2=connection.prepareStatement("select * from cours where IDSEANCE = ? AND IDUE = ? AND JOUR= ?");
         checkUserExist2.setInt(1,id_seance);
         checkUserExist2.setInt(2,id_ue);
         checkUserExist2.setDate(3, Date.valueOf(jour));
         resultSet2=checkUserExist2.executeQuery();
 
+        //verification redondance de la salle
+        checkUserExist3=connection.prepareStatement("select * from cours where IDSEANCE = ? AND ID_SALLE = ? AND JOUR= ?");
+        checkUserExist3.setInt(1,id_seance);
+        checkUserExist3.setInt(2,id_salle);
+        checkUserExist3.setDate(3, Date.valueOf(jour));
+        resultSet3=checkUserExist3.executeQuery();
+
+        checkUserExist4=connection.prepareStatement("select * from cours where IDSEANCE = ? AND ID_SALLE = ? AND IDUE=? AND JOUR= ?");
+        checkUserExist4.setInt(1,id_seance);
+        checkUserExist4.setInt(2,id_salle);
+        checkUserExist4.setInt(3,id_ue);
+        checkUserExist4.setDate(4, Date.valueOf(jour));
+        resultSet4=checkUserExist4.executeQuery();
+
         if(resultSet.isBeforeFirst()){
-            System.out.println("Peroid already Exist");
+            System.out.println("Period already Exist");
             Alert alert=new Alert(Alert.AlertType.ERROR);
-            alert.setContentText("You cannot add this Peroid with this ID \n A Peroid  already Exist with Same ID!!!!!!!!!");
+            alert.setContentText("You cannot add this Period with this ID \n A Period  already Exist with Same ID!!!!!!!!!");
+            alert.show();
+        }
+
+        else if(resultSet4.isBeforeFirst()){
+            System.out.println("Period already Exist With Same id sceance,salle,ue,jour");
+            Alert alert=new Alert(Alert.AlertType.ERROR);
+            alert.setContentText(" You cannot add this UE for this Sceance it has already been taken by ");
             alert.show();
         }
 
         else if(resultSet2.isBeforeFirst()){
-                System.out.println("Peroid already Exist With Same id sceance,ue,jour");
+                System.out.println("Period already Exist With Same id sceance,ue,jour");
                 Alert alert=new Alert(Alert.AlertType.ERROR);
-                alert.setContentText("You cannot add this Peroid with this sceance , ue and date \n A Peroid  already Exist with Same ID!!!!!!!!!");
+                alert.setContentText("You cannot add this Period with this sceance , ue and date \n A Peroid  already Exist with Same UE at Same time In Same class");
                 alert.show();
         }
+
+        else if(resultSet3.isBeforeFirst()){
+            System.out.println("Period already Exist With Same id sceance,salle,jour");
+            Alert alert=new Alert(Alert.AlertType.ERROR);
+            alert.setContentText("You cannot add this Period with this sceance , salle and date \n An UE is already taken by this peroid");
+            alert.show();
+        }
+
 
         else{
             query="insert into cours (IDCOURS,IDSEANCE,IDUE,ID_SALLE,JOUR)" + "values(?,?,?,?,?)";

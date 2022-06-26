@@ -52,11 +52,11 @@ public class AddPeriodController implements Initializable {
                         e.printStackTrace();
                     }
 
-                    id_course.clear();
-                    id_salle.clear();
-                    id_course.clear();
-                    id_ue.clear();
-                    id_sceance.clear();
+//                    id_course.clear();
+//                    id_salle.clear();
+//                    id_course.clear();
+//                    id_ue.clear();
+//                    id_sceance.clear();
 
                 }
             }

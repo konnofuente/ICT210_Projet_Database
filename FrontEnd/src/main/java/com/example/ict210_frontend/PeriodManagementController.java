@@ -82,6 +82,14 @@ public class PeriodManagementController implements Initializable {
             }
         });
 
+        refresh_btn.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent actionEvent) {
+
+                refreshTable();
+            }
+        });
+
 
 
     }
